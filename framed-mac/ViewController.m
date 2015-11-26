@@ -102,6 +102,9 @@
 - (void)didDropImage:(NSString *)filename {
     NSImage *image = [[NSImage alloc] initWithContentsOfFile:filename];
     self.screenshot.image = image;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      self.framedImage.image = [NSImage imageNamed:@"frame"];
+    });
 }
 
 @end
