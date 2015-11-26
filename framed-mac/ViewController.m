@@ -69,7 +69,11 @@
 }
 
 - (IBAction)shareScreenshot:(id)sender {
-    NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[self.framedImage.image]];
+    NSBitmapImageRep *rep = [self deviceImage];
+    NSImage *imageToSave = [[NSImage alloc] init];
+    [imageToSave addRepresentation:rep];
+  
+    NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[imageToSave]];
     sharingServicePicker.delegate = self;
     
     [sharingServicePicker showRelativeToRect:[sender bounds]
@@ -78,10 +82,7 @@
 }
 
 - (IBAction)saveScreenshot:(id)sender {
-    NSImageView *imageToSave = self.framedImage;
-    [imageToSave lockFocus];
-    NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:[imageToSave bounds]];
-    [imageToSave unlockFocus];
+    NSBitmapImageRep *rep = [self deviceImage];
     NSData *data = [rep representationUsingType:NSPNGFileType properties:@{NSImageCompressionFactor:@1.0}];
     
     // create the save panel
@@ -97,6 +98,15 @@
             [data writeToURL:saveURL atomically:YES];
         }
     }];
+}
+
+- (NSBitmapImageRep *)deviceImage {
+    NSImageView *framedImage = self.framedImage;
+    [framedImage lockFocus];
+    NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:[framedImage bounds]];
+    [framedImage unlockFocus];
+    
+    return rep;
 }
 
 - (void)didDropImage:(NSString *)filename {
