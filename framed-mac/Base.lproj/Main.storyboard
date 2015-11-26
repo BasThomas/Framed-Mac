@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -87,19 +87,26 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl" customClass="DraggingView">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="502" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iB1-LO-rEe">
+                                <rect key="frame" x="134" y="115" width="233" height="250"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="white" id="V7x-3j-kUj"/>
+                            </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="trr-mP-EyI" customClass="DraggingImageView">
-                                <rect key="frame" x="134" y="115" width="211" height="250"/>
+                                <rect key="frame" x="145" y="115" width="211" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="211" id="6KT-KG-qQF"/>
                                     <constraint firstAttribute="height" constant="250" id="PhC-MT-Z4V"/>
                                 </constraints>
+                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="frame" id="Q65-Vs-TZH"/>
                             </imageView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-Ch-q1r">
-                                <rect key="frame" x="249" y="67" width="75" height="32"/>
+                                <rect key="frame" x="260" y="67" width="75" height="32"/>
+                                <animations/>
                                 <buttonCell key="cell" type="push" title="Share" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FEC-hk-cvm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -109,7 +116,8 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ME0-La-jT4" customClass="DraggingButton">
-                                <rect key="frame" x="161" y="378" width="159" height="32"/>
+                                <rect key="frame" x="172" y="378" width="159" height="32"/>
+                                <animations/>
                                 <buttonCell key="cell" type="push" title="Choose Screenshot" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WdJ-Jf-RSA">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -119,7 +127,8 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Klp-oR-K0R">
-                                <rect key="frame" x="156" y="67" width="70" height="32"/>
+                                <rect key="frame" x="167" y="67" width="70" height="32"/>
+                                <animations/>
                                 <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGY-pD-HIz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -133,6 +142,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="5sS-dq-nwr"/>
                                 </constraints>
+                                <animations/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="screenshot_placeholder" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="O9K-LJ-Zrx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -150,11 +160,16 @@
                             <constraint firstItem="Klp-oR-K0R" firstAttribute="top" secondItem="p5p-oK-83q" secondAttribute="bottom" constant="70" id="AhG-FZ-A5j"/>
                             <constraint firstItem="trr-mP-EyI" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="C2D-YY-XJl"/>
                             <constraint firstItem="Klp-oR-K0R" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" constant="-49" id="GDH-C9-ReP"/>
+                            <constraint firstItem="iB1-LO-rEe" firstAttribute="top" secondItem="ME0-La-jT4" secondAttribute="bottom" constant="20" id="ISb-LI-C8C"/>
+                            <constraint firstItem="iB1-LO-rEe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="134" id="Koq-4Q-UAS"/>
+                            <constraint firstItem="Klp-oR-K0R" firstAttribute="top" secondItem="iB1-LO-rEe" secondAttribute="bottom" constant="20" id="LYe-Sg-XKH"/>
+                            <constraint firstAttribute="trailing" secondItem="iB1-LO-rEe" secondAttribute="trailing" constant="135" id="T2c-Fu-cOk"/>
                             <constraint firstItem="eyb-Ch-q1r" firstAttribute="leading" secondItem="Klp-oR-K0R" secondAttribute="trailing" constant="35" id="XAD-2N-2yk"/>
                             <constraint firstItem="eyb-Ch-q1r" firstAttribute="top" secondItem="trr-mP-EyI" secondAttribute="bottom" constant="20" id="eZv-it-8ZQ"/>
                             <constraint firstItem="trr-mP-EyI" firstAttribute="top" secondItem="ME0-La-jT4" secondAttribute="bottom" constant="20" id="gu9-6Y-Lef"/>
                             <constraint firstItem="ME0-La-jT4" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="nOO-4G-Uia"/>
                         </constraints>
+                        <animations/>
                     </view>
                     <connections>
                         <outlet property="chooseButton" destination="ME0-La-jT4" id="hwA-U5-aVn"/>
@@ -170,5 +185,6 @@
     <resources>
         <image name="frame" width="219" height="250"/>
         <image name="screenshot_placeholder" width="156" height="195"/>
+        <image name="white" width="233" height="233"/>
     </resources>
 </document>
