@@ -138,7 +138,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="p5p-oK-83q">
-                                <rect key="frame" x="180" y="165" width="122" height="152"/>
+                                <rect key="frame" x="190" y="165" width="122" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="5sS-dq-nwr"/>
                                 </constraints>
@@ -155,7 +155,7 @@
                         <constraints>
                             <constraint firstItem="trr-mP-EyI" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="0Gi-xh-FR7"/>
                             <constraint firstItem="p5p-oK-83q" firstAttribute="top" secondItem="ME0-La-jT4" secondAttribute="bottom" constant="68" id="4i9-C3-Qe7"/>
-                            <constraint firstItem="p5p-oK-83q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="180" id="6If-UB-E26"/>
+                            <constraint firstItem="p5p-oK-83q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="190" id="6If-UB-E26"/>
                             <constraint firstItem="Klp-oR-K0R" firstAttribute="top" secondItem="trr-mP-EyI" secondAttribute="bottom" constant="20" id="9TP-f9-8ZF"/>
                             <constraint firstItem="Klp-oR-K0R" firstAttribute="top" secondItem="p5p-oK-83q" secondAttribute="bottom" constant="70" id="AhG-FZ-A5j"/>
                             <constraint firstItem="trr-mP-EyI" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="C2D-YY-XJl"/>
